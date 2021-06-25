@@ -1,10 +1,12 @@
 <template>
-  <n-button type="primary">naive-ui</n-button>
-  <n-button>111</n-button>
+  <n-button type="primary">{{ num }}</n-button>
+  <n-button type="primary">{{ str }}</n-button>
+  <n-button type="primary">{{ aa }}</n-button>
 </template>
 
 <script lang="ts">
 import { ref, defineComponent } from 'vue'
+import { num, str, aa } from '/@/hooks'
 export default defineComponent({
   name: 'HelloWorld',
   props: {
@@ -17,7 +19,12 @@ export default defineComponent({
   },
   setup: () => {
     const count = ref(0)
-    return { count }
+    return {
+      count,
+      num,
+      str,
+      aa
+    }
   }
 })
 </script>
